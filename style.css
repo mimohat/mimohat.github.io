@@ -5,39 +5,79 @@
 }
 
 html {
-  background-color: #abd1c6;
+  background-color:#00214d;
 }
 
 body {
-  background-color:#001e1d;
-  background-clip: padding-box;
-  border: medium dashed #001e1d;
-  border-radius: 7px;
-  padding: .5em;
-}
-
-main {
-  background-color:#004643;
-  border: thin solid #001e1d;
-  border-radius: 7px;
-  padding: .5em;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 header {
-  text-align: center;
-  color: #fffffe;
-  font-family:fantasy;
-}
-
-.subtitle {
-  text-align: center;
+  grid-area: header;
+  background-color: #00214d;
+  padding: 15px 1px 10px 5px;
+  text-align: start;
+  text-indent: 15px;
   color: #fffffe;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  .page-title {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    word-spacing: -3px;
+  }
+  
+  .page-description {
+    color: #fde24f;
+    font-size: 10px;
+  }
+}
+
+main {
+  margin: 0px 15px;
+  padding: 10px 35px 5px 35px;
+  display: grid;
+  grid-template-areas: "content1 content3" "content2 content2";
+  grid-template-columns: 2fr minmax(auto, 0.6fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content:center;
+  align-content: space-around;
+
+  .content1 {
+    grid-area: content1;
+    padding: 1px 30px 10px 30px;
+  }
+  .content2 {
+    grid-area: content2;
+    padding: 1px 30px 10px 30px;
+  }
+  .content3 {
+    grid-area: content3;
+    padding: 1px 30px 10px 30px;
+  }
+  
+  .content1, .content2, .content3 {
+    background-color: #fffffe;
+    border:medium solid #fffffe;
+    border-radius: 6px;
+    overflow-wrap: break-word;
+  }
+}
+
+.section-title {
+  text-align: center;
+  color: #00214d;
+  font-size: larger;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 p {
-  text-align:start;
-  text-indent: 1em;
-  color: #abd1c6;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: start;
+  /* text-indent: 1em; */
+  color: #00214d;
+  font-size: medium;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
