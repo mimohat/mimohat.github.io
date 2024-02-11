@@ -11,33 +11,41 @@ html {
 body {
   margin: 0;
   margin-bottom: 20px;
+  display: grid;
+  grid-template-areas: 
+  "header header header" 
+  "main main main";
+  grid-template-columns: 1fr 2fr 0.5fr;
+  justify-content: space-between;
 }
 
 header {
   grid-area: header;
+  position: sticky;
+  top:0; /* Specify where the header should be fixed */
   background-color: #00214d;
   padding: 15px 1px 10px 5px;
   text-align: start;
   text-indent: 15px;
   color: #fffffe;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
-  .page-title {
-    font-size: 27px;
-    font-weight: 900;
-    letter-spacing: -1px;
-    word-spacing: -3px;
-  }
-  
-  .page-description {
-    color: #fde24f;
-    font-size: 10px;
-  }
+.page-title {
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  word-spacing: -3px;
+}
+
+.page-description {
+  color: #fde24f;
+  font-size: 10px;
 }
 
 main {
-  margin: 0px 15px;
-  padding: 10px 35px 5px 35px;
+  grid-area: main;
+  padding: 10px 40px 20px 50px;
   display: grid;
   grid-template-areas: "content1 content3" "content2 content2";
   grid-template-columns: 2fr minmax(auto, 0.6fr);
@@ -45,26 +53,26 @@ main {
   grid-row-gap: 10px;
   justify-content:center;
   align-content: space-around;
+}
 
-  .content1 {
-    grid-area: content1;
-    padding: 1px 30px 10px 30px;
-  }
-  .content2 {
-    grid-area: content2;
-    padding: 1px 30px 10px 30px;
-  }
-  .content3 {
-    grid-area: content3;
-    padding: 1px 30px 10px 30px;
-  }
-  
-  .content1, .content2, .content3 {
-    background-color: #fffffe;
-    border:medium solid #fffffe;
-    border-radius: 6px;
-    overflow-wrap: break-word;
-  }
+.bio {
+  grid-area: content1;
+  padding: 1px 30px 10px 30px;
+}
+.course {
+  grid-area: content2;
+  padding: 1px 30px 10px 30px;
+}
+.note {
+  grid-area: content3;
+  padding: 1px 30px 10px 30px;
+}
+
+.bio, .course, .note {
+  background-color: #fffffe;
+  border:medium solid #fffffe;
+  border-radius: 6px;
+  overflow-wrap: break-word;
 }
 
 .section-title {
